@@ -1,12 +1,12 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 interface Props {
-  text: String;
+  children: ReactNode;
 }
-const Alert = ({ text }: Props) => {
+const Alert = ({ children }: Props) => {
   return (
     <div className="alert alert-primary" role="alert">
-      {text}
+      {children}
     </div>
   );
 };
