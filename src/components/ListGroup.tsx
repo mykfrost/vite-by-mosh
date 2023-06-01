@@ -8,12 +8,12 @@ function ListGroup() {
     "San Francisco",
     "Tokyo",
   ];
-  items = [];
+  // items = [];
   // const message = items.length === 0 ? <p>No Items</p> : null;
 
-  const GetMessage = () => {
-    return items.length === 0 ? <p>No Items</p> : null;
-  };
+  // const GetMessage = () => {
+  //   return items.length === 0 ? <p>No Items</p> : null;
+  // };
   // if (items.length === 0)
   //   return (
   //     <Fragment>
@@ -24,7 +24,8 @@ function ListGroup() {
   return (
     <Fragment>
       <h1>List Group</h1>
-      {GetMessage()}
+      {/* {items.length === 0 ? <p>No Items</p> : null} */}
+      {items.length === 0 && <p>No Items</p>}
       <ul className="list-group">
         {/* <li className="list-group-item">An item</li>
         <li className="list-group-item">A second item</li>
@@ -32,7 +33,13 @@ function ListGroup() {
         <li className="list-group-item">A fourth item</li>
         <li className="list-group-item">And a fifth one</li> */}
         {items.map((item) => (
-          <li key={item}>{item}</li>
+          <li
+            className="list-group-item"
+            key={item}
+            onClick={() => console.log(item + "Clicked")}
+          >
+            {item}
+          </li>
         ))}
       </ul>
     </Fragment>
