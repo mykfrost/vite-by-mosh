@@ -1,5 +1,5 @@
-import { Fragment } from "react";
-import { MouseEvent } from "react";
+import { Fragment, useState } from "react";
+// import { MouseEvent } from "react";
 function ListGroup() {
   let items = [
     "New York",
@@ -12,9 +12,15 @@ function ListGroup() {
 
   //event handler
 
-  const handleClick = (event: MouseEvent) => console.log(event);
+  // const handleClick = (event: MouseEvent) => console.log(event);
 
-  const selectedIndex = 0; //-1 means no item is selected while 0 means first item is selected
+  // const selectedIndex = 0; //-1 means no item is selected while 0 means first item is selected
+
+  const [selectedIndex, setSelectedIndex] = useState(-1);
+  //Adding a hook for use state
+  // const arr = useState(-1);
+  // arr[0]; // variable (selected index)
+  // arr[1]; // updater function
   // items = [];
   // const message = items.length === 0 ? <p>No Items</p> : null;
 
@@ -47,7 +53,9 @@ function ListGroup() {
                 : "list-group-item"
             }
             key={item}
-            onClick={handleClick}
+            onClick={() => {
+              setSelectedIndex(index);
+            }}
           >
             {item}
           </li>
