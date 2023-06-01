@@ -9,6 +9,7 @@ function ListGroup() {
     "Tokyo",
   ];
   items = [];
+  const message = items.length === 0 ? <p>No Items</p> : null;
   // if (items.length === 0)
   //   return (
   //     <Fragment>
@@ -19,7 +20,7 @@ function ListGroup() {
   return (
     <Fragment>
       <h1>List Group</h1>
-      {items.length === 0 ? <p>No Items</p> : null}
+      {message}
       <ul className="list-group">
         {/* <li className="list-group-item">An item</li>
         <li className="list-group-item">A second item</li>
