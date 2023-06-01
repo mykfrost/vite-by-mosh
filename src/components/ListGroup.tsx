@@ -8,7 +8,7 @@ interface Props {
   heading: String;
 }
 
-function ListGroup(props: Props) {
+function ListGroup({ items, heading }: Props) {
   //event handler
 
   // const handleClick = (event: MouseEvent) => console.log(event);
@@ -35,23 +35,23 @@ function ListGroup(props: Props) {
   //   );
   return (
     <Fragment>
-      <h1>List Group</h1>
+      <h1>{heading}</h1>
       {/* {items.length === 0 ? <p>No Items</p> : null} */}
-      {props.items.length === 0 && <p>No Items</p>}
+      {items.length === 0 && <p>No Items</p>}
       <ul className="list-group">
         {/* <li className="list-group-item">An item</li>
         <li className="list-group-item">A second item</li>
         <li className="list-group-item">A third item</li>
         <li className="list-group-item">A fourth item</li>
         <li className="list-group-item">And a fifth one</li> */}
-        {props.items.map((item, index) => (
+        {items.map((item, index) => (
           <li
             className={
               selectedIndex === index
                 ? "list-group-item active"
                 : "list-group-item"
             }
-            key={item}
+            key={index}
             onClick={() => {
               setSelectedIndex(index);
             }}
