@@ -6,9 +6,11 @@ import { Fragment, useState } from "react";
 interface Props {
   items: String[];
   heading: String;
+  //(Item:string) => void
+  onSelectItem: (item: String) => void;
 }
 
-function ListGroup({ items, heading }: Props) {
+function ListGroup({ items, heading, onSelectItem }: Props) {
   //event handler
 
   // const handleClick = (event: MouseEvent) => console.log(event);
@@ -54,6 +56,7 @@ function ListGroup({ items, heading }: Props) {
             key={index}
             onClick={() => {
               setSelectedIndex(index);
+              onSelectItem(item);
             }}
           >
             {item}

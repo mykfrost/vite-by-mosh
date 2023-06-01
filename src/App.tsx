@@ -11,11 +11,19 @@ function App() {
     "San Francisco",
     "Tokyo",
   ];
+
+  const handleSelectItem = (item: String) => {
+    console.log("Selected" + item);
+  };
   return (
     <div>
       {/* <Message/> */}
       <Card />
-      <ListGroup items={items} heading="Cities" />
+      <ListGroup
+        items={items}
+        heading="Cities"
+        onSelectItem={handleSelectItem}
+      />
     </div>
   );
 }
