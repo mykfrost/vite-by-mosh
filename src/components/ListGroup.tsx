@@ -9,7 +9,13 @@ function ListGroup() {
     "Tokyo",
   ];
   items = [];
-  if (items.length === 0) return <p>No Items</p>;
+  if (items.length === 0)
+    return (
+      <Fragment>
+        <h1>List</h1>
+        <p>No Items</p>
+      </Fragment>
+    );
   return (
     <Fragment>
       <h1>List Group</h1>
