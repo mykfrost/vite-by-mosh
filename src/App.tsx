@@ -1,6 +1,7 @@
 import Message from "./Message";
 import ListGroup from "./components/ListGroup";
 import Card from "./components/Card";
+import Alert from "./components/Alert";
 
 function App() {
   let items = [
@@ -24,6 +25,7 @@ function App() {
         heading="Cities"
         onSelectItem={handleSelectItem}
       />
+      <Alert />
     </div>
   );
 }
