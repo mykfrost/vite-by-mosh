@@ -1,7 +1,11 @@
 function Card() {
   return (
     <div className="card">
-      <img src="../src/assets/advert.png" className="card-img-top" alt="..." />
+      <img
+        src="src/assets/advert.png"
+        className="card-img-top"
+        alt="this is my card"
+      />
       <div className="card-body">
         <h5 className="card-title">Card title</h5>
         <p className="card-text">
