@@ -2,6 +2,9 @@ import Message from "./Message";
 import ListGroup from "./components/ListGroup";
 import Card from "./components/Card";
 import Alert from "./components/Alert";
+import Container from "./components/Container";
+import { NavBar } from "./components/NavBar";
+import { Input } from "./components/Input";
 
 function App() {
   let items = [
@@ -19,12 +22,18 @@ function App() {
   return (
     <div>
       {/* <Message/> */}
+      <NavBar />
       <Card />
-      <ListGroup
-        items={items}
-        heading="Cities"
-        onSelectItem={handleSelectItem}
-      />
+      <Container>
+        <h1>This is the heading</h1>
+        <ListGroup
+          items={items}
+          heading="Cities"
+          onSelectItem={handleSelectItem}
+        />
+        <Input />
+      </Container>
+
       <Alert>
         Hello World ! This is Mr <h1>Okello</h1>
       </Alert>
